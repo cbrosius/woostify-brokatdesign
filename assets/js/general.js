@@ -6,6 +6,42 @@
 
 'use strict';
 
+// Sticky header functionality
+function initStickyHeader() {
+    var header = document.querySelector('.site-header.has-sticky');
+    if (!header) return;
+
+    var headerHeight = header.offsetHeight;
+    var scrollPos = window.pageYOffset;
+    var adminBar = document.getElementById('wpadminbar');
+    var adminBarHeight = adminBar ? adminBar.offsetHeight : 0;
+
+    // Add sticky class when scrolling down
+    function checkSticky() {
+        var currentScroll = window.pageYOffset;
+        
+        if (currentScroll > headerHeight) {
+            header.classList.add('is-sticky');
+            if (adminBar) {
+                header.style.top = adminBarHeight + 'px';
+            }
+        } else {
+            header.classList.remove('is-sticky');
+            header.style.top = '';
+        }
+        
+        scrollPos = currentScroll;
+    }
+
+    window.addEventListener('scroll', checkSticky);
+    window.addEventListener('resize', checkSticky);
+}
+
+// Initialize sticky header on document ready
+document.addEventListener('DOMContentLoaded', function() {
+    initStickyHeader();
+});
+
 Number.prototype.countDecimals = function () {
 
 	if ( Math.floor( this.valueOf() ) === this.valueOf() ) {

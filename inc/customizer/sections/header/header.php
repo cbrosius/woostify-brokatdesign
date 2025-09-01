@@ -31,6 +31,31 @@ $wp_customize->add_control(
 	)
 );
 
+// Sticky Header
+$wp_customize->add_setting(
+	'woostify_setting[header_sticky]',
+	array(
+		'default'           => false,
+		'type'              => 'option',
+		'sanitize_callback' => 'woostify_sanitize_checkbox',
+		'transport'         => 'postMessage',
+	)
+);
+
+$wp_customize->add_control(
+	new Woostify_Switch_Control(
+		$wp_customize,
+		'woostify_setting[header_sticky]',
+		array(
+			'label'    => __('Sticky Header', 'woostify'),
+			'section'  => 'woostify_header',
+			'settings' => 'woostify_setting[header_sticky]',
+			'priority' => 10,
+			'tab'      => 'general',
+		)
+	)
+);
+
 // Header layout.
 $wp_customize->add_setting(
 	'woostify_setting[header_layout]',

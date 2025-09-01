@@ -1210,6 +1210,25 @@ class Woostify_Get_CSS {
 
 		// Header.
 		$styles .= '
+			.site-header.has-sticky.is-sticky {
+				position: fixed;
+				top: 0;
+				width: 100%;
+				z-index: 999;
+				background-color: ' . esc_attr( $options['header_background_color'] ) . ';
+				box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+				animation: headerSlideDown 0.95s ease;
+			}
+
+			@keyframes headerSlideDown {
+				0% {
+					transform: translateY(-100%);
+				}
+				100% {
+					transform: translateY(0);
+				}
+			}
+
 			.site-header-inner{
 				background-color: ' . esc_attr( $options['header_background_color'] ) . ';
 			}
