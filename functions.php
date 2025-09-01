@@ -49,5 +49,18 @@ if ( is_admin() ) {
 require_once WOOSTIFY_THEME_DIR . 'inc/compatibility/class-woostify-divi-builder.php';
 
 /**
+ * Enqueue header banner styles
+ */
+function woostify_header_banner_styles() {
+    wp_enqueue_style(
+        'woostify-header-banner',
+        get_template_directory_uri() . '/assets/css/header-banner.css',
+        array(),
+        WOOSTIFY_VERSION
+    );
+}
+add_action('wp_enqueue_scripts', 'woostify_header_banner_styles');
+
+/**
  * Note: Do not add any custom code here. Please use a custom plugin so that your customizations aren't lost during updates.
  */

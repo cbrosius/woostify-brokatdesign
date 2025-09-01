@@ -7,6 +7,15 @@
 
 defined( 'ABSPATH' ) || exit;
 
+if ( ! function_exists( 'woostify_header_banner' ) ) {
+    /**
+     * Display header banner if set
+     */
+    function woostify_header_banner() {
+        get_template_part( 'template-parts/header/banner' );
+    }
+}
+
 if ( ! function_exists( 'woostify_replace_text' ) ) {
 	/**
 	 * Print dynamic tag like Current year, blog name...
