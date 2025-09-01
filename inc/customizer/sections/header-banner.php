@@ -65,6 +65,16 @@ $wp_customize->add_setting(
     )
 );
 
+// Add partial refresh
+$wp_customize->selective_refresh->add_partial(
+    'woostify_setting[header_banner_height]',
+    array(
+        'selector'        => '.header-banner',
+        'settings'        => array('woostify_setting[header_banner_height]'),
+        'render_callback' => '',
+    )
+);
+
 $wp_customize->add_control(
     new Woostify_Range_Slider_Control(
         $wp_customize,

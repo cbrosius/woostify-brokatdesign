@@ -53,6 +53,34 @@ function woostify_colors_live_update( id, selector, property, fullId ) {
 	)
 }
 
+// Header banner height.
+wp.customize( 
+	'woostify_setting[header_banner_height]',
+	function( value ) {
+		value.bind(
+			function( newval ) {
+				jQuery( '.header-banner' ).css( 'height', newval + 'px' );
+			}
+		);
+	}
+);
+
+// Header banner stretch.
+wp.customize(
+	'woostify_setting[header_banner_stretch]',
+	function( value ) {
+		value.bind(
+			function( newval ) {
+				jQuery( '.header-banner img' ).css( 'object-fit', newval ? 'cover' : 'contain' );
+			}
+		);
+	}
+);
+			)
+		},
+	)
+}
+
 // Color Group 2.
 function woostify_color_group_live_update_2( id, selectors, properties, value_mask, fullid ) {
 	var setting = fullid ? id : 'woostify_setting[' + id + ']'

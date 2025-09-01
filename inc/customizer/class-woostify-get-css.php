@@ -1289,6 +1289,22 @@ class Woostify_Get_CSS {
 			}
 		';
 
+		// Header Banner
+        $styles .= '
+            .header-banner {
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+                height: ' . esc_attr( $options['header_banner_height'] ) . 'px;
+            }
+
+            .header-banner img {
+                width: 100%;
+                height: 100%;
+                object-fit: ' . ($options['header_banner_stretch'] ? 'cover' : 'contain') . ';
+            }
+        ';
+
 		// Footer.
 		$styles .= '
 			.site-footer{
