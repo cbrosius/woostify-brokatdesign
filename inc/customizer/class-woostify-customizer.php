@@ -445,6 +445,10 @@ if ( ! class_exists( 'Woostify_Customizer' ) ) :
 				'header_transparent_menu_color'            => '',
 				'header_transparent_icon_color'            => '',
 				'header_transparent_count_background'      => '',
+                // HEADER BANNER
+                'header_banner_image'                      => '',
+                'header_banner_height'                     => 100,
+                'header_banner_stretch'                    => false,
 				// PAGE HEADER.
 				'page_header_display'                      => false,
 				'page_header_title'                        => true,

@@ -9,13 +9,14 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
 
-$banner_image = get_theme_mod('woostify_header_banner_image', '');
+$options = woostify_options( false );
+$banner_image = $options['header_banner_image'];
 if (empty($banner_image)) {
     return;
 }
 
-$banner_height  = get_theme_mod('woostify_header_banner_height', '100');
-$banner_stretch = get_theme_mod('woostify_header_banner_stretch', false);
+$banner_height  = $options['header_banner_height'];
+$banner_stretch = $options['header_banner_stretch'];
 $banner_class   = $banner_stretch ? 'stretch' : '';
 ?>
 

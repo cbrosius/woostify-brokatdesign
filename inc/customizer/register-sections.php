@@ -151,3 +151,6 @@ $wp_customize->add_section(
 		'priority' => 40,
 	)
 );
+
+// Add Header Banner customizer settings
+require_once WOOSTIFY_THEME_DIR . 'inc/customizer/sections/header-banner.php';
