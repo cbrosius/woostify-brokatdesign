@@ -55,7 +55,7 @@ function woostify_colors_live_update( id, selector, property, fullId ) {
 
 // Sticky Header
 wp.customize(
-	'woostify_setting[header_sticky]',
+
 	function( value ) {
 		value.bind(
 			function( newval ) {

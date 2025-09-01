@@ -1210,7 +1210,7 @@ class Woostify_Get_CSS {
 
 		// Header.
 		$styles .= '
-			.site-header.has-sticky.is-sticky {
+
 				position: fixed;
 				top: 0;
 				width: 100%;

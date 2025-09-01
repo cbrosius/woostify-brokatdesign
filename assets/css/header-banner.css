@@ -2,14 +2,30 @@
     width: 100%;
     overflow: hidden;
     position: relative;
+    margin: 0;
+    padding: 0;
+    display: block;
 }
 
 .header-banner img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    display: block;
+    margin: 0;
+    padding: 0;
 }
 
 .header-banner.stretch img {
     object-fit: cover;
+}
+
+@media (max-width: 767px) {
+    .header-banner {
+        margin-top: -1px; /* Fix any subpixel gaps */
+    }
+    
+    .site-header {
+        margin-bottom: 0;
+    }
 }
